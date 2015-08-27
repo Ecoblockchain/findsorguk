@@ -289,15 +289,15 @@ echo $this->findSpotEditDeleteLink()->setController($controller)
             <?php echo $this->yahooGeoAdjacent()->setWoeid($this->woeid); ?>
         </div>
         <?php
-        $discovery = array($this->method, $this->disccircum, $this->curr_loc, $this->landvalue, $this->landuse);
+        $discovery = array($this->discmethod, $this->disccircum, $this->curr_loc, $this->landvalue, $this->landuse);
         if(array_filter($discovery)):
         ?>
         <div class="span4">
             <h3 class="lead">Discovery metadata</h3>
 
             <p>
-                <?php if (!is_null($this->discoveryMethod)) : ?>
-                    Method of discovery: <?php echo $this->escape($this->discmethod); ?>
+                <?php if (!is_null($this->discmethod)) : ?>
+                    Method of discovery: <?php echo $this->discmethod; ?>
                     <a href="<?php echo $this->url(array(
                             'module' => 'datalabs',
                             'controller' => 'terminology',
